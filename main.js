@@ -67,6 +67,6 @@ define(function (require, exports, module) {
     AppInit.appReady(function () {
         CommandManager.register(COMMAND_NAME, COMMAND_ID, init);
         var menu = Menus.getMenu(Menus.AppMenuBar.EDIT_MENU);
-        menu.addMenuItem(COMMAND_ID, "Ctrl-Alt-C");
+        menu.addMenuItem(COMMAND_ID, "Alt-C");
     });
 });
