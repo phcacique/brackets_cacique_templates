@@ -14,5 +14,5 @@ You can also use inline shortcuts. Type the shortcut and then type `alt + C`. Th
 
 **JS**
 * FOR: `js_fori`
-  * FOR with end value: `js_fori_[end value]`
+  * FOR with end value: `js_fori_[end value]`
 
