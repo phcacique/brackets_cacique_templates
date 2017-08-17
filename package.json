@@ -1,9 +1,9 @@
 {
     "name": "cacique.cacique",
     "title": "Cacique Templates",
-    "description": "Inserts code from templates",
+    "description": "Insert code from templates",
     "homepage": "https://github.com/phcacique/brackets_cacique_templates",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": "Pedro Cacique <phcacique@gmail.com> (http://www.pedrocacique.com)",
     "license": "",
     "engines": {
