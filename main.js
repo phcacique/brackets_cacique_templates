@@ -26,25 +26,74 @@ define(function (require, exports, module) {
           COMMAND_NAME = "Cacique Templates";
 
     function init() {
+        
+        currentDoc = DocumentManager.getCurrentDocument();
+        editor = EditorManager.getCurrentFullEditor();
+        
+        
+        var cursorPos = editor.getCursorPos();
+
+        var text = currentDoc.getLine(cursorPos.line).trim();
+
+        if(text==null || text==""){
+            showCaciqueDialog();
+        } else {
+            var ar = text.split("_");
+            if(ar.length == 1){
+                if(ar[0]=="html") insertByName("basic_html", true);
+                else showCaciqueDialog();
+            }else if(ar.length == 2){
+                if(ar[0]=="js" && ar[1]=="fori") insertText("for(var i=0; i<10; i++){\n\n}", text.length);
+                else if(ar[0]=="html" && ar[1]=="css") insertByName("link_css", true);
+                else if(ar[0]=="html" && ar[1]=="canvas") insertByName("basic_canvas", true);
+                else showCaciqueDialog();
+            } else if(ar.length == 3){
+                if(ar[0]=="js" && ar[1]=="fori") insertText("for(var i=0; i<"+ar[2]+"; i++){\n\n}", text.length);
+                else showCaciqueDialog();
+            } else {
+                showCaciqueDialog();
+            }
+        } 
+    }
+    
+    function showCaciqueDialog(){
         showDialog(modal);
-        document.getElementById('model').onchange = function () {
-            var option = document.getElementById('model').value;
-            for(var i=0; i<elements.length; i++){
-                if(elements[i].name == option) {
-                    insertText(elements[i].element);
-                    break;   
-                }
-            } 
+        document.getElementById('html_select').onchange = function(){replace('html_select')};
+        document.getElementById('js_select').onchange = function(){
+            switch(document.getElementById('js_select').value){
+                case "fori":
+                    insertText("for(var i=0; i<10; i++){\n\n}");
+                    break;
+            }
             myDialog.close();
-        }
+        };
+    }
+    
+    function insertByName(name, offset){
+        var off = (offset==null)?false:true;
+        for(var i=0; i<elements.length; i++){
+            if(elements[i].name == name) {
+                if(offset==false) insertText(elements[i].element);
+                else insertText(elements[i].element, name.length);
+                break;   
+            }
+        } 
+    }
+    
+    function replace(selectName){
+        var option = document.getElementById(selectName).value;
+        insertByName(option);
+        myDialog.close();
     }
     
     //INSERT TEXT ON PAGE
-    function insertText(text) {
-        var currentDoc = DocumentManager.getCurrentDocument();
-        var editor = EditorManager.getCurrentFullEditor();
+    function insertText(text, offset) {
+        var off = (offset==null)?0:offset;
+        currentDoc = DocumentManager.getCurrentDocument();
+        editor = EditorManager.getCurrentFullEditor();
         var pos = editor.getCursorPos();
-        currentDoc.replaceRange(text, pos);
+        var pos2 = {line: pos.line, ch: pos.ch - off};
+        currentDoc.replaceRange(text, pos, pos2);
     }
 
     //CUSTOM DEVELOPMENT LOG
