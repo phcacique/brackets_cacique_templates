@@ -1,0 +1,12 @@
+{
+    "name": "cacique.cacique",
+    "title": "Cacique",
+    "description": "Inserts code from templates",
+    "homepage": "",
+    "version": "1.0.0",
+    "author": "Pedro Cacique <phcacique@gmail.com> (http://www.pedrocacique.com)",
+    "license": "",
+    "engines": {
+        "brackets": ">=0.34.0"
+    }
+}
