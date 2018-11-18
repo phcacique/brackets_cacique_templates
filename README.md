@@ -16,3 +16,9 @@ You can also use inline shortcuts. Type the shortcut and then type `alt + C`. Th
 * FOR: `js_fori`
   * FOR with end value: `js_fori_[end value]`
 
+### Custom Snippets
+Create your own snippets by adding a file named *cacique.txt* to the target file directory. In this document, create your snippets using the following format:
+> *name*::*content*
+
+Load the snippets using the icon on the right menu or the shortcut `Alt+C` and then click on Load File.
+To use it, type c_*name* and use the shortcut `Alt+C`
