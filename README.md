@@ -10,7 +10,6 @@ You can also use inline shortcuts. Type the shortcut and then type `alt + C`. Th
 **HTML**
 * Basic HTML: `html`
 * Link to CSS: `html_css`
-* Link to JS: `html_js`
 * Basic html with centered canvas: `html_canvas`
 
 **JS**

@@ -81,8 +81,6 @@ define(function (require, exports, module) {
             if (!head.replace(/\s/g, '').length) { head = ""};
             if (!tail.replace(/\s/g, '').length) { tail = ""};
             
-            alert(ar);
-            
             if (ar.length == 1) {
                 if (ar[0] == "html") {insertByName("basic_html", true);}
                 else {showCaciqueDialog();}
