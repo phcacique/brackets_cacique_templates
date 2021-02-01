@@ -1,8 +1,32 @@
-<p>Select the code to insert:</p>
+<style>
+    h1 {
+        font-size: 14pt;
+        padding-top: 0;
+        margin-top: 0;
+    }
+
+    hr {
+        border: none;
+        border-top: 1px solid #C3C6C5;
+    }
+    
+    button{
+        border: none;
+        padding: 5px 10px;
+        border-radius: 2px;
+        border: 1px solid #C3C6C5;
+        background-color: #D4D7D7;
+    }
+
+</style>
+<h1>Common Snippets</h1>
+<p>
+    Select the code to insert:</p>
 <select id="html_select">
     <option value="">HTML</option>
     <option value="basic_html">Basic HTML [html]</option>
     <option value="link_css">Link to CSS [html_css]</option>
+    <option value="link_js">Link to JS [html_js]</option>
     <option value="basic_canvas">Basic Canvas [html_canvas]</option>
 </select>
 
@@ -10,3 +34,10 @@
     <option value="">JS</option>
     <option value="fori">FOR [js_fori]</option>
 </select>
+
+<hr>
+<h1>Custom Snippets</h1>
+<p>
+    <small>Place a <i>.txt</i> file named <i>cacique.txt</i> with your snippets at the same directory of the target file. <br>Follow this pattern for the snippets:<br><i>[name]</i>::<i>[content]</i></small>
+</p>
+<p><button id="teste">Load File</button> </p>

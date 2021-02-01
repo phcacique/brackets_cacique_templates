@@ -1,0 +1,4 @@
+snippet1::my first snippet
+ you can use multiple lines texts
+
+snippet2::this is also a snippet
